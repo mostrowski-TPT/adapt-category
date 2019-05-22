@@ -1,0 +1,19 @@
+<div class="matching-inner component-inner">
+    {{> component this}}
+    <div class="matching-widget component-widget {{#unless _isEnabled}} disabled {{#if _isInteractionComplete}} complete submitted show-user-answer {{#if _isCorrect}}correct{{/if}} {{/if}} {{/unless}}">
+    <div class="category-header"><div class="statements">Statements</div><div class="category-questions">{{#each _items.1._options}}<div>{{{text}}}</div>{{/each}}</div></div>
+
+        {{#each _items}}
+        <div class="category-item matching-item item {{#unless ../_isEnabled}}{{#if ../_canShowMarking}}{{#if _isCorrect}}correct{{else}}incorrect{{/if}}{{/if}}{{/unless}} item-{{@index}}">
+            <div class="matching-radio-title">{{{text}}}</div>
+            <div class="matching-radio-container component-item-color">
+                
+               {{> radio this placeholder=../placeholder _id=../_id _dropdownIndex=@index}}
+                
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="buttons">
+    </div>
+</div>

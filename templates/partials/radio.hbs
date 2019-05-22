@@ -1,0 +1,9 @@
+<div class="optionscolumn">
+        <form class="radios item-{{@index}}">
+        {{#each _options}}
+        <div class="radiooption">
+        <input name="name" index={{@index}} optionvalue="{{{text}}}" type="radio" class="option" role="option" id="dropdown__item__{{../_id}}__{{../_dropdownIndex}}__{{inc @index}}" class="dropdown__item" text="{{text}}" value="{{_index}}"/>
+        </div>
+        {{/each}}
+    </form>
+</div>
